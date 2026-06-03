@@ -934,6 +934,16 @@ config PORTABLE
 	select MMU
 	select OF
 
+
+config RISCV_ISA_SSCUCNT
+	bool "Sscucnt extension support for CPU Utilization Counter"
+	depends on RISCV && GENERIC_ARCH_TOPOLOGY && SMP
+	default y
+	help
+	  Adds support for the Sscucnt (CPU Utilization Counter) extension
+	  which provides hardware counters for scheduler frequency invariance.
+	  If you do not know what to do here, say Y.
+
 menu "Power management options"
 
 source "kernel/power/Kconfig"
